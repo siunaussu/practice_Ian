@@ -6,6 +6,9 @@ def pytest_configure(config):
     config.addinivalue_line(
         "markers", "ydc: marks tests as ydc to run"
     )
+    config.addinivalue_line(
+        "python_functions", "ydc_*"
+    )
 
 def pytest_collection_modifyitems(config, items):
     # Example rule: skip tests marked "slow" unless --run-slow is passed
